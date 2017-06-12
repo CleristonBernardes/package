@@ -1,0 +1,13 @@
+
+server:
+  port: 3000
+
+database:
+  connection: ""
+
+api:
+  url : "https://test-api.lescapes.com/api/public-offers"
+  active_only: false
+  cache_time: 1800   # in sec
+  status:
+    success: 200

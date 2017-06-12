@@ -14,7 +14,19 @@
     "value"
   ],
   "scripts": {
-    "start": "coffee server.coffee"
+    "start": "coffee server.coffee",
+    "test": "jest"
+  },
+  "jest":{
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node",
+      "coffee"
+    ],
+    "transformIgnorePatterns": [ ],
+    "scriptPreprocessor": "<rootDir>/__test__/preprocessor.js"
   },
   "engines": {
     "node": "4.6.1",

@@ -2,6 +2,7 @@ request           = require "request"
 config            = require 'config'
 node_cache        = require "node-cache"
 async             = require "async"
+
 cache = new node_cache( { checkperiod: config.api.cache_time } ); #30min
 
 get_all_public_offers = (done) ->
