@@ -1,5 +1,5 @@
-# package
-package price selector
+# Package
+Package price selector
 
 ## Setup
 
