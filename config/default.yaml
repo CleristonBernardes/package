@@ -5,6 +5,9 @@ server:
 database:
   connection: ""
 
+error:
+  message: "We are facing some technical problems, please try again later..."
+
 api:
   url : "https://test-api.lescapes.com/api/public-offers"
   active_only: false

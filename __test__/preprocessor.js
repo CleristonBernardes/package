@@ -1,4 +1,4 @@
-const coffee = require('coffee-script');
+const coffee    = require('coffee-script');
 const babelJest = require('babel-jest');
 
 module.exports = {

@@ -1,4 +1,5 @@
-_ = require 'underscore'
+_       = require 'underscore'
+config  = require 'config'
 
 get_parameters = (req) ->
   _.extend req.params, req.query, req.body
@@ -12,7 +13,7 @@ wrapper = (method) ->
         res.status(200).send(result)
     catch err
       console.log "Err:", err
-      next "We are facing some technical problems, please try again later..."
+      next config.error.message || "Error"
 
 module.exports = {
   get_parameters

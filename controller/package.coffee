@@ -15,11 +15,11 @@ get_all_public_offers = (done) ->
     else
       async.waterfall [
         (n) -> request options, (err, response, body) ->
-          return n(body?.message || err) if err? || body?.status isnt config.api.status.success || not body?
+          return n(err || body?.message || config.error.message) if err? || body?.status isnt config.api.status.success || not body?
           n err, body
         (body, n) -> cache.set url, body, (err, result) ->
-            console.error "Error while caching api result: API - #{url} ERROR - #{err}" if err?
-            n err, body
+          console.error "Error while caching api result: API - #{url} ERROR - #{err}" if err?
+          n err, body
         ], done
 
 module.exports = {
