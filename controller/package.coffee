@@ -22,6 +22,11 @@ get_all_public_offers = (done) ->
           n err, body
         ], done
 
+clean_cache = ({}, done) ->
+  cache.del config.api.url, (err, count) ->
+    done err, "Cached cleaned successfully."
+
 module.exports = {
-  get_all_public_offers
+  get_all_public_offers,
+  clean_cache
 }

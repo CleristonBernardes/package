@@ -19,8 +19,9 @@ app.use bodyParser.urlencoded { extended: false }
 app.use bodyParser.json()
 app.use bodyParser.json { type: 'application/vnd.api+json' }
 
-app.get '/', utils.wrapper((p, d) -> d null, "Server running...")
-app.get '/api/value', utils.wrapper(package_pre.get_package)
+app.get '/',                      utils.wrapper((p, d) -> d null, "Server running...")
+app.get '/api/value',             utils.wrapper(package_pre.get_package)
+app.get '/api/invalidate-cache',  utils.wrapper(package_pre.clean_cache)
 
 
 server = app.listen (process.env.PORT || config.server.port || 8080), () ->

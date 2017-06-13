@@ -34,4 +34,5 @@ get_package = (params, done) ->
 
 module.exports = {
   get_package
+  clean_cache: package_c.clean_cache
 }
